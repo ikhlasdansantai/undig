@@ -36,8 +36,8 @@ function App() {
 
   return (
     <>
-      {/* <Header onClick={scrollTop} state={open} setState={setOpen} /> */}
-      {/* <audio ref={audioRef} src={lagunya} autoPlay={open} /> */}
+      <Header onClick={scrollTop} state={open} setState={setOpen} />
+      <audio ref={audioRef} src={lagunya} autoPlay={open} />
       <main id="main" className="bg-primary relative z-50" ref={ref}>
         <Bride state={open} setState={setOpen} />
         <Location />
