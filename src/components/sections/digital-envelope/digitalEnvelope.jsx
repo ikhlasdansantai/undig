@@ -1,7 +1,9 @@
+import Bca from "/Bca-logo.png";
 import Mandiri from "/Mandiri-logo.png";
 import Dana from "/Dana-logo.png";
 import Barcode from "/barcode.jpeg";
 import { useState, useRef, useEffect } from "react";
+import copy from "copy-to-clipboard";
 
 function ShowBarcode({ state, setState }) {
   let menuRef = useRef();
@@ -25,8 +27,26 @@ function ShowBarcode({ state, setState }) {
   );
 }
 
+function AlertComp({ setState }) {
+  useEffect(() => {
+    setTimeout(() => {
+      setState(false);
+    }, 2500);
+  }, []);
+  return (
+    <div class="fixed top-4 right-4 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+      <span class="font-medium">Pesan Berhasil Di Salin!</span>.
+    </div>
+  );
+}
+
 function DigitalCard({ images, alt, name, noRek }) {
   const [showBarcode, setShowBarcode] = useState(false);
+  const [isCopy, setIsCopy] = useState(false);
+
+  const copyText = (target) => {
+    copy(target);
+  };
 
   return (
     <div className="digital-card bg-textSecondary/[.60] text-left p-4 rounded-md">
@@ -40,7 +60,14 @@ function DigitalCard({ images, alt, name, noRek }) {
           <h2>A.N Ipan Pandi Setiana</h2>
         </div>
         {name !== "dana" ? (
-          <button type="button" className="border-4 border-white/[.60] text-white px-8 py-3">
+          <button
+            type="button"
+            onClick={() => {
+              setIsCopy(true);
+              copyText(noRek);
+            }}
+            className="border-4 border-white/[.60] text-white px-8 py-3"
+          >
             Salin
           </button>
         ) : (
@@ -49,12 +76,19 @@ function DigitalCard({ images, alt, name, noRek }) {
           </button>
         )}
       </div>
+      {isCopy && <AlertComp setState={setIsCopy} />}
       <ShowBarcode state={showBarcode} setState={setShowBarcode} />
     </div>
   );
 }
 
 const banks = [
+  {
+    images: Bca,
+    alt: "Bca-logo",
+    name: "Bca",
+    noRek: "2880168048",
+  },
   {
     images: Mandiri,
     alt: "Mandiri-logo",
