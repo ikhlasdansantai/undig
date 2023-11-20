@@ -1,0 +1,30 @@
+.wedding__bg {
+  background: linear-gradient(to top, rgba(37, 36, 37, 1) 9%, rgba(0, 212, 255, 0) 100%);
+  position: absolute;
+  top: 0;
+  /* right: 0; */
+  /* bottom: 0; */
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  transition: 3s;
+}
+
+.open__invitation {
+  transform: translateY(-100%);
+  transition: 2.5s;
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.wedding__bg .test {
+  position: absolute;
+  z-index: -10;
+  background-position: center;
+  background-image: url(../../assets/bride/4.jpeg);
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
