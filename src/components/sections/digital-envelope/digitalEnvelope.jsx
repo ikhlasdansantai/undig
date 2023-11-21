@@ -106,8 +106,12 @@ const banks = [
 export default function DigitalEnvelope() {
   return (
     <section id="digital-envelope" className="py-10 px-4 text-center">
-      <h2 className="text-3xl text-white font-semibold tracking-wider">Amplop Digital</h2>
-      <p className="text-textSecondary mt-2">Bagi bapak/ibu/saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui virtual account atau e-wallet di bawah ini</p>
+      <h2 className="text-3xl text-white font-semibold tracking-wider" data-aos="fade-up" data-aos-duration="1600">
+        Amplop Digital
+      </h2>
+      <p className="text-textSecondary mt-2" data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">
+        Bagi bapak/ibu/saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui virtual account atau e-wallet di bawah ini
+      </p>
 
       <div className="bank-cards space-y-6 mt-10">
         {banks.map(({ images, alt, name, noRek }) => {

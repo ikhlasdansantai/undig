@@ -7,6 +7,8 @@ import Documentation from "./components/sections/documentation/documentation";
 import WriteMsg from "./components/sections/writeMsg/writeMsg";
 import DigitalEnvelope from "./components/sections/digital-envelope/digitalEnvelope";
 import Footer from "./components/Footer/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import lagunya from "/Nothing's Gonna Change My Love For You - Westlife.mp3";
 
@@ -28,6 +30,10 @@ function App() {
       // stopAudio();
     }
   }, [open]);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const scrollTop = () => {
     setOpen(true);

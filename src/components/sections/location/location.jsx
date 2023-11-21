@@ -3,9 +3,11 @@ import LocationCard from "./locationCard";
 
 export default function Location() {
   return (
-    <div className="bg-secondary p-4 py-10">
-      <h2 className="text-3xl text-center text-white ">Lokasi</h2>
-      <div className="cards w-full mt-8 space-y-6">
+    <div className="bg-secondary p-4 py-10 relative overflow-x-hidden">
+      <h2 className="text-3xl text-center text-white" data-aos="fade-up" data-aos-duration="1000">
+        Lokasi
+      </h2>
+      <div className="cards w-full mt-8 space-y-6" data-aos="fade-up-left" data-aos-duration="1300" data-aos-delay="300">
         {locationCardDatas.map(({ type, detail, time }, index) => (
           <LocationCard key={index} type={type} detail={detail} time={time} />
         ))}
@@ -17,6 +19,9 @@ export default function Location() {
         height="250"
         allowFullScreen={true}
         loading="lazy"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="500"
       ></iframe>
     </div>
   );
