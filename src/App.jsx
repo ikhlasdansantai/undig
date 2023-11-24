@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="max-w-2xl mx-auto">
       <Header onClick={scrollTop} state={open} setState={setOpen} />
       <audio ref={audioRef} src={lagunya} autoPlay={open} />
       <main id="main" className="bg-primary relative z-50" ref={ref}>
@@ -52,7 +52,7 @@ function App() {
         <DigitalEnvelope />
         <Footer />
       </main>
-    </>
+    </div>
   );
 }
 
