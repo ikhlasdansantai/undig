@@ -8,7 +8,7 @@ export default function Header({ state, onClick, setState }) {
   }, []);
 
   return (
-    <div className={`container fixed z-[99] ${state ? "open__invitation" : ""}`}>
+    <div className={`container fixed left-0 right-0 max-w-2xl mx-auto z-[99] ${state ? "open__invitation" : ""}`}>
       <div className="open__wedding__invitation relative z-[10000] text-white min-h-screen flex flex-col justify-end items-center pb-10">
         <h2 className="font-Salty text-6xl tracking-wider">Ipan & Vera</h2>
         <span className="block tracking-[1px]">31 Desember 2023</span>
