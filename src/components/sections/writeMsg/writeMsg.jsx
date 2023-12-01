@@ -8,15 +8,11 @@ export default function WriteMsg() {
   });
 
   const writeMessage = (e) => {
-    // const getName = e.target.name;
-    // const getvalue = e.target.value;
-
     setMsg({ ...msg, [e.target.name]: [e.target.value] });
   };
 
   const sendMessage = () => {
     window.location.href = `https://api.whatsapp.com/send?phone=6288291315369&text=Dari ${msg.nama}, pesan: ${msg.message}`;
-    console.log(msg);
   };
 
   return (
