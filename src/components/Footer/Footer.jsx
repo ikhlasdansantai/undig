@@ -19,6 +19,7 @@ export default function Footer() {
       <figure className="bg absolute bottom-0 left-0 -z-0 cursor-none" data-aos="fade-up" data-aos-duration="1600" data-aos-delay="1300">
         <img src={bottomFlower} alt="Flower" />
       </figure>
+      <span className="opacity-0">Terimakasih 😀</span>
     </div>
   );
 }
