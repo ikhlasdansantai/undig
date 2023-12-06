@@ -5,27 +5,27 @@ import Barcode from "/barcode.jpeg";
 import { useState, useRef, useEffect } from "react";
 import copy from "copy-to-clipboard";
 
-function ShowBarcode({ state, setState }) {
-  let menuRef = useRef();
-  const handleClose = () => {
-    setCreateProgram(false);
-  };
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) setState(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  }, []);
+// function ShowBarcode({ state, setState }) {
+//   let menuRef = useRef();
+//   const handleClose = () => {
+//     setCreateProgram(false);
+//   };
+//   useEffect(() => {
+//     let handler = (e) => {
+//       if (!menuRef.current.contains(e.target)) setState(false);
+//     };
+//     document.addEventListener("mousedown", handler);
+//     return () => {
+//       document.removeEventListener("mousedown", handler);
+//     };
+//   }, []);
 
-  return (
-    <figure className={`fixed transition duration-300 pointer-events-none scale-0 flex flex-col items-center justify-center px-4 top-0 left-0 right-0 bottom-0 min-h-screen z-40 ${state && "scale-100"}`} ref={menuRef}>
-      <img src={Barcode} alt="barcode-img" />
-    </figure>
-  );
-}
+//   return (
+//     <figure className={`fixed transition duration-300 pointer-events-none scale-0 flex flex-col items-center justify-center px-4 top-0 left-0 right-0 bottom-0 min-h-screen z-40 ${state && "scale-100"}`} ref={menuRef}>
+//       <img src={Barcode} alt="barcode-img" />
+//     </figure>
+//   );
+// }
 
 function AlertComp({ setState }) {
   useEffect(() => {
@@ -77,30 +77,30 @@ function DigitalCard({ images, alt, name, noRek }) {
         )}
       </div>
       {isCopy && <AlertComp setState={setIsCopy} />}
-      <ShowBarcode state={showBarcode} setState={setShowBarcode} />
+      {/* <ShowBarcode state={showBarcode} setState={setShowBarcode} /> */}
     </div>
   );
 }
 
 const banks = [
-  {
-    images: Bca,
-    alt: "Bca-logo",
-    name: "Bca",
-    noRek: "2880168048",
-  },
+  // {
+  //   images: Bca,
+  //   alt: "Bca-logo",
+  //   name: "Bca",
+  //   noRek: "2880168048",
+  // },
   {
     images: Mandiri,
     alt: "Mandiri-logo",
     name: "mandiri",
     noRek: "1770018665718",
   },
-  {
-    images: Dana,
-    alt: "Dana-logo",
-    name: "dana",
-    noRek: "",
-  },
+  // {
+  //   images: Dana,
+  //   alt: "Dana-logo",
+  //   name: "dana",
+  //   noRek: "",
+  // },
 ];
 
 export default function DigitalEnvelope() {
